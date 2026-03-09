@@ -5,4 +5,6 @@ ans: spread operator is used to expand object or an array. It expands into indiv
 3️⃣ What is the difference between map(), filter(), and forEach()?
 ans: to create a new array map is used most of the times, it helps transforming new elements, filter pass a condition and foreach used to run a fucntion which doesnt return an array
 4️⃣ What is an arrow function?
+ans: its a clean and short way to write code
 5️⃣ What are template literals?
+ans: type of string that uses ` and allows multi interpolation
