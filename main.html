@@ -31,11 +31,11 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1116.65 7.65a7.5 7.5 0 010 10.6z" />
             </svg>
-            <input id="searchInput"
+            <input id="search-input"
                 class="border px-8 py-2 rounded"
                 placeholder="Search issues...">
         </div>
-        <button onclick="searchIssues()" class="bg-blue-600 text-white px-4 py-2 rounded flex items-center gap-1">
+       <button id="search-button" onclick="searchIssues()" class="bg-blue-600 text-white px-4 py-2 rounded flex items-center gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
@@ -81,8 +81,47 @@
                     </div>
                 </div>
 
-<!--Card Container-->
+         <div id="loading-spinner" class="flex flex-col gap-4 justify-center items-center py-16 hidden">
+                <span class="loading loading-spinner loading-xl"></span>
+                <span class="skeleton skeleton-text">Loading issues...</span>
+         </div>
 
- <script src="script.js"></script>
+        <div id="issue-container"
+                    class="bg-[#FBFBFB] sm:p-6 p-4 grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-3">
+                </div>
+            </div>
+        </div>
+
+        <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+            <h3 id="modal-title" class="text-lg font-bold"></h3>
+            <div class="flex items-center gap-2 mt-2 flex-wrap">
+                <div id="modal-status-badge"></div>
+                <span class="text-[#64748B] text-sm">&bull;</span>
+                <p id="modal-meta" class="text-[#64748B] text-sm"></p>
+                <span class="text-[#64748B] text-sm">&bull;</span>
+                <p id="modal-date" class="text-[#64748B] text-sm"></p>
+            </div>
+            <div id="modal-labels" class="flex flex-wrap gap-1 mt-3"></div>
+            <p id="modal-description" class="py-4 text-[#64748B]"></p>
+            <div class="border-t border-[#E4E4E7] pt-4 flex items-center gap-8">
+                <div class="flex-1">
+                    <p class="text-[#64748B] text-xs">Assignee:</p>
+                    <p id="modal-assignee" class="font-semibold text-sm"></p>
+                </div>
+                <div class="flex-1">
+                    <p class="text-[#64748B] text-xs">Priority:</p>
+                    <div id="modal-priority" class="mt-1"></div>
+                </div>
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn btn-primary bg-[#4A00FF] border-none shadow-none">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+ <script src="scripts/script.js"></script>
 </body>
 </html>
